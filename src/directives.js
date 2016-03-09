@@ -1,4 +1,4 @@
-angular.module('clientIO').directive('rappid', ['rappidData', 'InspectorData', function(rappidData, InspectorData) {
+angular.module('clientIO').directive('rappid', ['rappidData', 'InspectorData', 'StencilData', function(rappidData, InspectorData, StencilData) {
 
     var paper, graph, paperScroller, stencil, selection, selectionView, clipboard, commandManager;
 
@@ -41,6 +41,8 @@ angular.module('clientIO').directive('rappid', ['rappidData', 'InspectorData', f
         // Create stencil.
         function stencilInit(scope, element) {
 
+            var Data = StencilData;
+
             function layout(graph) {
                 joint.layout.GridLayout.layout(graph, {
                     columnWidth: stencil.options.width / 2 - 10,
@@ -51,18 +53,18 @@ angular.module('clientIO').directive('rappid', ['rappidData', 'InspectorData', f
                     resizeToFit: true
                 });
             }
-            
+
             stencil = new joint.ui.Stencil({
                 graph: graph,
                 paper: paper,
                 width: 240,
-                groups: scope.data.stencil.groups,
+                groups: Data.groups,
                 search: scope.data.stencil.search
             }).on('filter', layout);
 
             $('.stencil-container', element).append(stencil.render().el);
 
-            _.each(scope.data.stencil.shapes, function(shapes, groupName) {
+            _.each(Data.shapes, function(shapes, groupName) {
                 stencil.load(shapes, groupName);
                 layout(stencil.getGraph(groupName));
                 stencil.getPaper(groupName).fitToContent(1,1,10);
@@ -156,11 +158,16 @@ angular.module('clientIO').directive('rappid', ['rappidData', 'InspectorData', f
                         inspector.remove();
                     }
                     var test = InspectorData.InspectorDefs;
+                    var CommonInspectorInputs = InspectorData.CommonInspectorInputs;
+                    var CommonInspectorGroups = InspectorData.CommonInspectorGroups;
                     var type = cellView.model.attributes.type;
 
+                    var imageType = cellView.model.attributes.attrs.text.text;
+                    var type = cellView.model.attributes.attrs.text.text;
+
                     inspector = new joint.ui.Inspector({
-                        inputs: scope.bigData[type].inputs || {},
-                        groups: scope.bigData[type].groups || {},
+                        inputs:  scope.bigData[type] ? scope.bigData[type].inputs : CommonInspectorInputs ,
+                        groups:  scope.bigData[type] ? scope.bigData[type].groups : CommonInspectorGroups,
                         cell: cellView.model
                     }).on('render', function() {
 
