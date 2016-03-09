@@ -1,0 +1,8 @@
+.halo.default.surrounding .box {
+   box-shadow: 2px 2px 5px lightgray;  
+   border: 1px solid #4f4f4f;
+   text-shadow: 0 -1px 0 #000;
+   font-size: 9px;
+   color: #bcbcbc;
+   background-color: #333;
+}
