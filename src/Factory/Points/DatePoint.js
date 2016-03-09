@@ -1,4 +1,12 @@
-angular.module('clientIO').factory('permissionProp', ['UnitListFactory', function(UnitListFactory) {
+angular
+    .module('clientIO')
+    .factory('dateProp', checkboxProp);
 
 
-}]);
+dateProp.$inject = ['UnitListFactory'];
+
+
+function dateProp(UnitListFactory) {
+
+
+}

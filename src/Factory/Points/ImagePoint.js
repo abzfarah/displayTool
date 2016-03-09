@@ -1,3 +1,16 @@
-/**
- * Created by afarah on 9/03/2016.
- */
+angular
+    .module('clientIO')
+    .factory('imageProp', imageProp);
+
+
+imageProp.$inject = ['UnitListFactory'];
+
+
+function imageProp(UnitListFactory) {
+    var imageProp = {};
+
+    return {
+        imageProp: imageProp
+    }
+
+}

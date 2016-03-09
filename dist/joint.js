@@ -9964,8 +9964,7 @@ joint.routers.orthogonal = (function() {
         }
 
         return orthogonalVertices;
-    };
-
+    }
     return findOrthogonalRoute;
 
 })();
@@ -10089,8 +10088,7 @@ joint.routers.manhattan = (function(g, _) {
         var source = graph.getCell(link.get('source').id);
         if (source) {
             excludedAncestors = _.union(excludedAncestors, _.map(source.getAncestors(), 'id'));
-        };
-
+        }
         var target = graph.getCell(link.get('target').id);
         if (target) {
             excludedAncestors = _.union(excludedAncestors, _.map(target.getAncestors(), 'id'));
@@ -10245,8 +10243,7 @@ joint.routers.manhattan = (function(g, _) {
         }).value();
 
         return startPoints;
-    };
-
+    }
     // returns a direction index from start point to end point
     function getDirectionAngle(start, end, dirLen) {
 
@@ -10268,8 +10265,7 @@ joint.routers.manhattan = (function(g, _) {
         for (var i = 0, len = endPoints.length; i < len; i++) {
             var cost = from.manhattanDistance(endPoints[i]);
             if (cost < min) min = cost;
-        };
-
+        }
         return min;
     }
 
@@ -10374,9 +10370,8 @@ joint.routers.manhattan = (function(g, _) {
                         parents[neighborKey] = currentPoint;
                         costs[neighborKey] = costFromStart;
                         openSet.add(neighborKey, costFromStart + estimateCost(neighborPoint, endPoints));
-                    };
-                };
-
+                    }
+                }
                 loopsRemain--;
             }
         }
@@ -10458,8 +10453,7 @@ joint.routers.manhattan = (function(g, _) {
             tailPoint = _.last(partialRoute) || tailPoint;
 
             Array.prototype.push.apply(newVertices, partialRoute);
-        };
-
+        }
         return newVertices;
     }
 

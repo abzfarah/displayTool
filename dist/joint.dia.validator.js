@@ -59,13 +59,12 @@ joint.dia.Validator = Backbone.Model.extend({
                         fn(err, command, callbacks);
                     } else {
                         handoverErr = err;
-                        return;
+
                     }
                 } catch (err) {
                     callbacks(err);
                 }
-            };
-
+            }
             callbacks(handoverErr);
         });
 

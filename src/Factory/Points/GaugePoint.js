@@ -1,4 +1,12 @@
-angular.module('clientIO').factory('permissionProp', ['UnitListFactory', function(UnitListFactory) {
+angular
+    .module('clientIO')
+    .factory('gaugeProp', gaugeProp);
 
 
-}]);
+gaugeProp.$inject = ['UnitListFactory'];
+
+
+function gaugeProp(UnitListFactory) {
+
+
+}

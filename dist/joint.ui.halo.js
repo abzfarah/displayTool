@@ -863,8 +863,7 @@ joint.ui.Halo = joint.mvc.View.extend({
                 centre = g.point(bbox.x + bbox.width + linkWidth, bbox.y + bbox.height / 2);
                 dy = linkWidth / 2;
                 break;
-            };
-
+            }
             p1 = g.point(centre).offset(-dx, -dy);
             p2 = g.point(centre).offset(dx, dy);
 

@@ -30,8 +30,7 @@ file, You can obtain one at http://jointjs.com/license/rappid_v2.txt
         this.parentArea = parentArea;
         this.siblingGap = opt.siblingGap;
         this.computeSize(opt);
-    };
-
+    }
     _.extend(LayoutSiblings.prototype, {
 
         sortLayoutAreas: function(layoutAreas) {
@@ -288,8 +287,7 @@ file, You can obtain one at http://jointjs.com/license/rappid_v2.txt
         _.invoke(childAreas, 'addParentReference', this);
 
         this.computeRelativePosition(root, childAreas, options);
-    };
-
+    }
     _.extend(LayoutArea, {
 
         create: function(direction, root, childAreas, opt) {
@@ -317,8 +315,7 @@ file, You can obtain one at http://jointjs.com/license/rappid_v2.txt
                     break;
                 default:
                     constructor = LayoutArea;
-            };
-
+            }
             return constructor;
         }
 

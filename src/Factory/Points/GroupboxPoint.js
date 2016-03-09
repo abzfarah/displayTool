@@ -1,4 +1,12 @@
-angular.module('clientIO').factory('permissionProp', ['UnitListFactory', function(UnitListFactory) {
+angular
+    .module('clientIO')
+    .factory('groupboxProp', groupboxProp);
 
 
-}]);
+groupboxProp.$inject = ['UnitListFactory'];
+
+
+function groupboxProp(UnitListFactory) {
+
+
+}

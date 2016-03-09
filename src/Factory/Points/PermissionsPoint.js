@@ -1,4 +1,12 @@
-angular.module('clientIO').factory('permissionProp', ['UnitListFactory', function(UnitListFactory) {
+angular
+    .module('clientIO')
+    .factory('permissionProp', permissionProp);
+
+
+permissionProp.$inject = ['UnitListFactory'];
+
+
+function permissionProp(UnitListFactory) {
 
     var PermissionDefs = {
         text: { type: 'textarea', label: 'Label Text' },
@@ -44,7 +52,7 @@ angular.module('clientIO').factory('permissionProp', ['UnitListFactory', functio
                 })
             }
         }
-    }
+    };
 
 
     function inp(defs) {
@@ -62,4 +70,4 @@ angular.module('clientIO').factory('permissionProp', ['UnitListFactory', functio
     }
 
 
-}]);
+};

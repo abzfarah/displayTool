@@ -726,18 +726,9 @@ var joint =
 /* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(module, global) {/**
-	 * @license
-	 * lodash 3.10.1 (Custom Build) <https://lodash.com/>
-	 * Build: `lodash modern -d -o ./index.js`
-	 * Copyright 2012-2015 The Dojo Foundation <http://dojofoundation.org/>
-	 * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
-	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 * Available under MIT license <https://lodash.com/license>
-	 */
-	;(function() {
-
-	  /** Used as a safe reference for `undefined` in pre-ES5 environments. */
+	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(module, global) {
+			(function () {
+				/** Used as a safe reference for `undefined` in pre-ES5 environments. */
 	  var undefined;
 
 	  /** Used as the semantic version number. */
@@ -13078,7 +13069,7 @@ var joint =
 	  }
 	}.call(this));
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)(module), (function() { return this; }())))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)(module), (function() { return this; }())));
 
 /***/ },
 /* 6 */
@@ -13093,7 +13084,7 @@ var joint =
 			module.webpackPolyfill = 1;
 		}
 		return module;
-	}
+	};
 
 
 /***/ },
@@ -18676,7 +18667,7 @@ var joint =
 
 	}));
 
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())));
 
 /***/ },
 /* 54 */
