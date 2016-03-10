@@ -1,14 +1,9 @@
-/*! Rappid v1.7.0 - HTML 5 Diagramming Framework - TRIAL VERSION
+/*! JointJs v1.7.0 - HTML 5 Diagramming Framework
 
 Copyright (c) 2015 client IO
 
  2016-01-11 
 
-
-This Source Code Form is subject to the terms of the Rappid Trial License
-, v. 2.0. If a copy of the Rappid License was not distributed with this
-file, You can obtain one at http://jointjs.com/license/rappid_v2.txt
- or from the Rappid archive as was distributed by client IO. See the LICENSE file.*/
 
 
 (function(root, factory) {
