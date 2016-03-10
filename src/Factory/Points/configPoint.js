@@ -1,14 +1,14 @@
 angular
     .module('clientIO')
-    .factory('gaugePoint', gaugePoint);
+    .factory('configPoint', configPoint);
 
 
-gaugePoint.$inject = ['UnitListFactory'];
+configPoint.$inject = ['UnitListFactory'];
 
 
-function gaugePoint(UnitListFactory) {
+function configPoint(UnitListFactory) {
 
-    var gaugeDefs = {
+    var configDefs = {
         text: { type: 'textarea', label: 'Label Text' },
         'font-size': { type: 'range', min: 5, max: 80, unit: 'px', label: 'Font size' },
         'font-family': { type: 'select', options: fontList, label: 'Font family' },
@@ -30,7 +30,7 @@ function gaugePoint(UnitListFactory) {
     };
 
 
-    var gaugeProps = {
+    var configProps = {
 
         inputs: {
             attrs: {
@@ -59,13 +59,13 @@ function gaugePoint(UnitListFactory) {
         var ret = {};
         _.each(defs, function(def, attr) {
 
-            ret[attr] = _.extend({}, gaugeDefs[attr], def);
+            ret[attr] = _.extend({}, configDefs[attr], def);
         });
         return ret;
     }
 
     return {
-        gaugeProps: gaugeProps
+        configProps: configProps
     }
 
 }

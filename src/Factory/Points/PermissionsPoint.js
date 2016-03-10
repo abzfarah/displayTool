@@ -1,14 +1,14 @@
 angular
     .module('clientIO')
-    .factory('permissionProp', permissionProp);
+    .factory('permissionsPoint', permissionPoint);
 
 
-permissionProp.$inject = ['UnitListFactory'];
+permissionPoint.$inject = ['UnitListFactory'];
 
 
-function permissionProp(UnitListFactory) {
+function permissionPoint(UnitListFactory) {
 
-    var PermissionDefs = {
+    var permissionDefs = {
         text: { type: 'textarea', label: 'Label Text' },
         'font-size': { type: 'range', min: 5, max: 80, unit: 'px', label: 'Font size' },
         'font-family': { type: 'select', options: fontList, label: 'Font family' },
@@ -59,7 +59,7 @@ function permissionProp(UnitListFactory) {
         var ret = {};
         _.each(defs, function(def, attr) {
 
-            ret[attr] = _.extend({}, PermissionDefs[attr], def);
+            ret[attr] = _.extend({}, permissionDefs[attr], def);
         });
         return ret;
     }

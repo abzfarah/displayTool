@@ -170,9 +170,11 @@ angular.module('clientIO')
                         var imageType = cellView.model.attributes.attrs.text.text;
                         var type = cellView.model.attributes.attrs.text.text;
 
+                        var realtype = cellView.model.attributes.iconType;
+
                         inspector = new joint.ui.Inspector({
-                            inputs:  scope.bigData[type] ? scope.bigData[type].inputs : CommonInspectorInputs ,
-                            groups:  scope.bigData[type] ? scope.bigData[type].groups : CommonInspectorGroups,
+                            inputs:  scope.bigData[realtype] ? scope.bigData[realtype].inputs : CommonInspectorInputs ,
+                            groups:  scope.bigData[realtype] ? scope.bigData[realtype].groups : CommonInspectorGroups,
                             cell: cellView.model
                         }).on('render', function() {
 

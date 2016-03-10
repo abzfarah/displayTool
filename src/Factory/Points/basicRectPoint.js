@@ -1,14 +1,14 @@
 angular
     .module('clientIO')
-    .factory('gaugePoint', gaugePoint);
+    .factory('basicRectPoint', basicRectPoint);
 
 
-gaugePoint.$inject = ['UnitListFactory'];
+basicRectPoint.$inject = ['UnitListFactory'];
 
 
-function gaugePoint(UnitListFactory) {
+function basicRectPoint(UnitListFactory) {
 
-    var gaugeDefs = {
+    var rectDefs = {
         text: { type: 'textarea', label: 'Label Text' },
         'font-size': { type: 'range', min: 5, max: 80, unit: 'px', label: 'Font size' },
         'font-family': { type: 'select', options: fontList, label: 'Font family' },
@@ -29,26 +29,27 @@ function gaugePoint(UnitListFactory) {
         'xlink:href': { type: 'text', label: 'Image URL' }
     };
 
-
-    var gaugeProps = {
+    var basicRectPoint = {
 
         inputs: {
             attrs: {
                 text: inp({
-                    text: {group: 'Lavel Specific Properties', index: 1},
-                    'font-size': {group: 'Lavel Specific Properties', index: 2},
-                    'font-family': {group: 'Lavel Specific Properties', index: 3},
-                    'stroke': {type: 'color', group: 'Lavel Specific Properties', index: 4, defaultValue: '#000000'},
-                    'EngineeringUnits': {group: 'Lavel Specific Properties', index: 5}
-
+                    text: { group: 'text', index: 1 },
+                    'font-size': { group: 'text', index: 2 },
+                    'font-family': { group: 'text', index: 3 },
+                    'font-weight': { group: 'text', index: 4 },
+                    fill: { group: 'text', index: 5 },
+                    stroke: { group: 'text', index: 6 },
+                    'stroke-width': { group: 'text', index: 7 },
+                    'ref-x': { group: 'text', index: 8 },
+                    'ref-y': { group: 'text', index: 9 }
                 }),
-                displayProperties: inp({
-                    width: {type: 'number', min: 1, max: 500, group: 'Display Properties', label: 'width', index: 21},
-                    height: {type: 'number', min: 1, max: 500, group: 'Display Properties', label: 'height', index: 23},
-                    x: {type: 'number', min: 1, max: 2000, group: 'Display Properties', label: 'x', index: 23},
-                    y: {type: 'number', min: 1, max: 2000, group: 'Display Properties', label: 'y', index: 24},
-                    layer: {type: 'number', min: 1, max: 2000, group: 'Display Properties', label: 'Layer', index: 25},
-
+                rect: inp({
+                    fill: { group: 'presentation', index: 1 },
+                    'stroke-width': { group: 'presentation', index: 2, min: 0, max: 30, defaultValue: 1 },
+                    'stroke-dasharray': { group: 'presentation', index: 3 },
+                    rx: { group: 'presentation', index: 4 },
+                    ry: { group: 'presentation', index: 5 }
                 })
             }
         }
@@ -59,13 +60,14 @@ function gaugePoint(UnitListFactory) {
         var ret = {};
         _.each(defs, function(def, attr) {
 
-            ret[attr] = _.extend({}, gaugeDefs[attr], def);
+            ret[attr] = _.extend({}, rectDefs[attr], def);
         });
         return ret;
     }
 
+
     return {
-        gaugeProps: gaugeProps
+        basicRectProps: basicRectPoint
     }
 
 }

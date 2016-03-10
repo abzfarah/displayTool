@@ -1,15 +1,29 @@
 angular
     .module('clientIO')
-    .factory('PointProperties', PointProperties);
+    .factory('pointProperties', pointProperties);
 
 
-PointProperties.$inject = ['UnitListFactory'];
+pointProperties.$inject =  ['UnitListFactory', 'booleanPoint', 'buttonPoint', 'checkboxPoint', 'datePoint', 'dialPoint', 'gaugePoint',
+                            'groupboxPoint', 'htmlPoint', 'imagePoint', 'livetextPoint', 'livetrendsPoint', 'permissionsPoint',
+                            'rangePoint', 'selectPoint', 'spectrumPoint', 'basicRectPoint', 'basicCirclePoint', 'configPoint'];
 
 
-function PointProperties(UnitListFactory) {
-    var rangeProp = {};
+
+function pointProperties(UnitListFactory, booleanPoint, buttonPoint, checkboxPoint, datePoint, dialPoint, gaugePoint, groupboxPoint,
+                         htmlPoint, imagePoint, livetextPoint, livetrendsPoint, permissionsPoint, rangePoint, selectPoint, spectrumPoint,
+                         basicRectPoint, basicCirclePoint, configPoint)
+
+
+{
+
+    var Props = [booleanPoint, buttonPoint, checkboxPoint, datePoint, dialPoint, gaugePoint,
+        groupboxPoint, htmlPoint, imagePoint, livetextPoint, livetrendsPoint, permissionsPoint,
+        rangePoint, selectPoint, spectrumPoint, basicRectPoint, basicCirclePoint, configPoint];
+
+    //Combine all properties
+    var Props = Object.assign.apply(null, Props);
 
     return {
-        rangeProp: rangeProp
+        Props: Props
     }
 }
