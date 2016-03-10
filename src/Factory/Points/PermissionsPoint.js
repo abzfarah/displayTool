@@ -35,11 +35,11 @@ function permissionPoint(UnitListFactory) {
         inputs: {
             attrs: {
                 text: inp({
-                    text: {group: 'Lavel Specific Properties', index: 1},
-                    'font-size': {group: 'Lavel Specific Properties', index: 2},
-                    'font-family': {group: 'Lavel Specific Properties', index: 3},
-                    'stroke': {type: 'color', group: 'Lavel Specific Properties', index: 4, defaultValue: '#000000'},
-                    'EngineeringUnits': {group: 'Lavel Specific Properties', index: 5}
+                    text: {group: 'Permissions Specific Properties', index: 1},
+                    'font-size': {group: 'Permissions Specific Properties', index: 2},
+                    'font-family': {group: 'Permissions Specific Properties', index: 3},
+                    'stroke': {type: 'color', group: 'Permissions Specific Properties', index: 4, defaultValue: '#000000'},
+                    'EngineeringUnits': {group: 'Permissions Specific Properties', index: 5}
 
                 }),
                 displayProperties: inp({

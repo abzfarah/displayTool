@@ -63,16 +63,11 @@ function booleanPoint(UnitListFactory) {
 
         },
 
-        'select-type': {group: 'Select Box Properties', index: 1},
         'type-sort': {group: 'Select Box Properties', index: 2},
         'font-size': {group: 'Select Box Properties', index: 3},
         'stroke': {type: 'color', group: 'Select Box Properties', index: 4, defaultValue: '#000000'},
         'font-family': {group: 'Select Box Properties', index: 5},
-        'custom-data': { label: 'Text',  group: 'Select Box Properties', label: 'Point Name', index: 6,
 
-            attrs: { 'label': { 'data-tooltip': 'An example of setting custom data via Inspector.' } }
-
-        }
 
 
 
@@ -80,7 +75,7 @@ function booleanPoint(UnitListFactory) {
 
 
 
-    var boleanProps = {
+    var booleanProps = {
 
         inputs: {
             attrs: {
@@ -100,7 +95,7 @@ function booleanPoint(UnitListFactory) {
 
 
     return {
-        booleanProps: booleanPoint
+        booleanProps: booleanProps
     }
 
 }
