@@ -8,15 +8,7 @@ StencilData.$inject = ['iconFactory'];
 
         var hello=iconFactory;
 
-    var Stencil = {};
-
-    Stencil.groups = {
-        basic: { index: 1, label: 'Basic shapes' }
-    };
-
-    Stencil.shapes = {
-
-        basic: [
+    var Stencil = [
 
             new joint.shapes.basic.Image({
                 attrs: {
@@ -182,14 +174,13 @@ StencilData.$inject = ['iconFactory'];
             })
 
 
-        ]
-    };
+
+    ];
 
 
         return {
 
-            groups: Stencil.groups,
-            shapes: Stencil.shapes
+            shapes: Stencil
         };
 
 };

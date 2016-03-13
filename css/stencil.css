@@ -51,9 +51,6 @@
     outline: none;
 }
 
-.stencil.searchable > .content {
-   top: 30px;
-}
 
 .stencil .group {
    max-height: 700px;

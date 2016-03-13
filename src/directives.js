@@ -1,9 +1,9 @@
 angular.module('clientIO')
     .directive('display', display)
 
-    display.$inject = ['rappidData', 'InspectorData', 'StencilData'];
+    display.$inject = ['rappidData', 'InspectorData', 'StencilData', 'iconFactory'];
 
-    function display (rappidData, InspectorData, StencilData) {
+    function display (rappidData, InspectorData, StencilData, iconFactory) {
 
         var paper, graph, paperScroller, stencil, selection, selectionView, clipboard, commandManager;
 
@@ -20,7 +20,7 @@ angular.module('clientIO')
                     gridSize: 10,
                     perpendicularLinks: true,
                     model: graph,
-                    markAvailable: true,
+
                     defaultLink: new joint.dia.Link({
                         attrs: {
                             '.marker-source': { d: 'M 10 0 L 0 5 L 10 10 z', transform: 'scale(0.001)' },
@@ -36,7 +36,7 @@ angular.module('clientIO')
                     padding: 50
                 });
 
-                $('.paper-container', element).append(paperScroller.el);
+                $('#paper-container', element).append(paperScroller.el);
 
                 scope.components.paper = paper;
                 scope.components.scroller = paperScroller;
@@ -48,33 +48,38 @@ angular.module('clientIO')
 
                 var Data = StencilData;
 
-                function layout(graph) {
-                    joint.layout.GridLayout.layout(graph, {
-                        columnWidth: stencil.options.width / 2 - 10,
-                        columns: 2,
-                        rowHeight: 75,
-                        dy: 5,
-                        dx: 5,
-                        resizeToFit: true
-                    });
-                }
+
+
+
+
+
 
                 stencil = new joint.ui.Stencil({
                     graph: graph,
                     paper: paper,
-                    width: 240,
-                    groups: Data.groups,
-                    search: scope.data.stencil.search
-                }).on('filter', layout);
+                    width: 240
+                })
 
-                $('.stencil-container', element).append(stencil.render().el);
 
-                _.each(Data.shapes, function(shapes, groupName) {
-                    stencil.load(shapes, groupName);
-                    layout(stencil.getGraph(groupName));
-                    stencil.getPaper(groupName).fitToContent(1,1,10);
+
+                $('#stencil-container', element).append(stencil.render().el);
+                stencil.load( StencilData.shapes);
+
+
+
+
+                joint.layout.GridLayout.layout(stencil.getGraph(), {
+                    columnWidth: 110,
+                    columns: 60,
+                    rowHeight: 110,
+                    dy: 20,
+                    dx: 20,
+                    resizeToFit: true
                 });
 
+
+
+                stencil.getPaper().fitToContent(1,1,10);
                 scope.components.stencil = stencil;
             },
 
@@ -145,7 +150,7 @@ angular.module('clientIO')
             function cellToolsInit(scope, element) {
 
                 var inspector;
-                var $inspectorHolder = $('.inspector-container', element);
+                var $inspectorHolder = $('#inspector-container', element);
 
                 function openCellTools(cellView) {
 
