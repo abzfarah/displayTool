@@ -1039,6 +1039,7 @@ unmatched elements opaque instead of completely invisible which is the default.
 }
 .inspector label:after {
     content: ':';
+    color: red;
 }
 .inspector input,
 .inspector textarea {
@@ -1144,6 +1145,7 @@ unmatched elements opaque instead of completely invisible which is the default.
    margin-right: -20px;
    margin-top: 0;
    margin-bottom: 0;
+   color: red;
    font-size: 10px;
    font-weight: 700;
    text-transform: uppercase;
